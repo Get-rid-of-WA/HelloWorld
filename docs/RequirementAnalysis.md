@@ -228,8 +228,8 @@
 [ClassLink]:https://edu.cnblogs.com/campus/gdgy/2021Softwarecodedevelopmenttechnology
 [WorkRequirements]:https://edu.cnblogs.com/campus/gdgy/2021Softwarecodedevelopmenttechnology/homework/11968
 [DDDimg]:https://img2020.cnblogs.com/blog/2319277/202105/2319277-20210503165906022-666493790.png
-[Classimg]:https://img2020.cnblogs.com/blog/2319277/202105/2319277-20210503164855208-988532850.png
-[ERimg]:https://img2020.cnblogs.com/blog/2319277/202105/2319277-20210503165148787-2021441852.png
+[Classimg]:https://user-images.githubusercontent.com/51396619/117522572-cbb66800-afe6-11eb-87ce-a5122d7b8393.png
+[ERimg]:https://user-images.githubusercontent.com/51396619/117522502-64001d00-afe6-11eb-8956-98021140ea77.png
 [Flowimg]:https://img2020.cnblogs.com/blog/2319277/202105/2319277-20210503234413566-1608778624.png
 [UseCaseimg]:https://img2020.cnblogs.com/blog/2319277/202105/2319277-20210503222923895-1487240816.png
 [Sdesign]:https://img2020.cnblogs.com/blog/2319277/202105/2319277-20210504012523181-1479600557.png
