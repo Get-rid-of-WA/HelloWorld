@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+
+{% block stylesheet %}
+<style>
+  .btn{
+    float: right;
+  }
+</style>
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Personal Information</li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>{{ user.username }}</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Customer Information</h3>
+      <h5>sex</h5>
+      <p>{{ customer.sex }}</p>
+      <h5>email</h5>
+      <p>{{ customer.email }}</p>
+      <h5>phone</h5>
+      <p>{{ customer.phone }}</p>
+      <h5>remain</h5>
+      <p>{{ customer.remain }}</p>
+      <a href="#" class="btn btn-outline-secondary">
+        Update Information
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Provider Information</h3>
+      {% if provider == None %}
+        <p>You are no a provider now, do you want to be a provider?</p>
+        <a href="{% url 'newProvider' %}" class="btn btn-outline-secondary">Become a Provider</a>
+      {% else %}
+        <h5>company name</h5>
+        <p>{{ provider.name }}</p>
+        <h5>email</h5>
+        <p>{{ provider.email }}</p>
+        <h5>phone</h5>
+        <p>{{ provider.phone }}</p>
+
+        <h5>today schedule</h5>
+        <div class="list-group">
+          {% if schedule == None %}
+          <p>today have no item</p>
+          {% else %}
+            {% for item in schedule %}
+            <a href="#" class="list-group-item list-group-item-action">
+              <p>here is a item</p>
+            </a>
+            {% endfor %}
+          {% endif %}
+        </div>
+        
+        <a href="#" class="btn btn-outline-secondary">
+          Update Information
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

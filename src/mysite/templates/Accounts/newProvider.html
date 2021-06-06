@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Become Provider</h3>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {% include 'base/form.html' %}
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+          <small>We will use the customer data as default, you can change the data as you want.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+{% block stylesheet %}
+<style>
+    small{
+        float: right;
+    }
+</style>
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">{{ username }}</li>
+  <li class="breadcrumb-item active">AuditRecord</li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="list-group">
+    {% for auditRecord in auditRecordList %}
+    <div class="list-group-item">
+      <h5>{{ auditRecord.name }}</h5>
+      <small>{{ auditRecord.price }}</small>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

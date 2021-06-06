@@ -1,0 +1,82 @@
+{% extends 'base/base.html' %}
+
+{% block stylesheet %}
+<style>
+  small{
+    float: right;
+  }
+
+  .form-control {
+    padding-left: 2.375rem;
+  }
+</style>
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">index</li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <!-- 老版本的展示主页 -->
+  <!-- 
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ServerProject in ServerProjectList %}
+        <tr>
+          <td>
+            <a href="{% url 'detailServerProject' ServerProject.pk %}">{{ ServerProject.name }}</a>
+        </td>
+        <td>
+            <small class="text-muted d-block">{{ ServerProject.description }}</small>
+        </td>
+        <td class="align-middle">{{ ServerProject.price }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  -->
+  
+  <!-- 新版本的展示主页 -->
+  <div class="main">
+    <form method="POST" role="form">
+      {% csrf_token %}
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search by name" name="SearchRequirement">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="submit">
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <div class="list-group">
+    {% for ServerProject in ServerProjectList %}
+    <a href="{% url 'detailServerProject' ServerProject.pk %}" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ ServerProject.name }}</h5>
+      </div>
+      <p class="mb-1">{{ ServerProject.description }}</p>
+      <small>{{ ServerProject.price }}</small>
+    </a>
+    {% endfor %}
+  </div>
+  
+</div>
+{% endblock %}

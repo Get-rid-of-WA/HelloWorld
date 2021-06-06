@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block stylesheet %}
+
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Recharge</li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row text-center justify-content-center">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Recharge Remain</h3>
+        <p>$ 100</p>
+      </div>
+      <div class="card-footer">
+        <form method="POST" role="form" novalidate>
+          {% csrf_token %}
+          <button type="submit" class="btn btn-outline-primary">Recharge</button>
+        </form>
+      </div>
+    </div> 
+  </div>
+</div>
+{% endblock %}

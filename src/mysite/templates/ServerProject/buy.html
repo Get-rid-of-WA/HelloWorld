@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">{{ ServerProjectItem.name }}</li>
+  <li class="breadcrumb-item active">Buy</li>
+{% endblock %}
+
+{% block stylesheet %}
+<style>
+  .mybtn-left{
+      float: left;
+  }
+
+  .mybtn-right{
+      float: right;
+  }
+
+  small{
+    float: right;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h5>{{ ServerProjectItem.name }}</h5>
+          <p>price {{ ServerProjectItem.price }}</p>
+          <small>we will auto choice the currly time as order time.</small>
+        </div>
+        <div class="card-footer">
+          <form method="POST" role="form" novalidate>
+            <a href="{% url 'detailServerProject' ServerProjectItem.id %}" class="btn btn-outline-secondary btn-lg" name="cancel">Cancel</a>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-primary btn-lg mybtn-right" name="enter">Enter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
